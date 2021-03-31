@@ -1,4 +1,4 @@
-from contestants import Contestants
+
 
 
 class UI:
@@ -16,6 +16,9 @@ class UI:
     def contestant_info(self, contestant):
         print(f'Name: {contestant.first_name} {contestant.last_name} / Email: {contestant.email} / '
               f'Registration #: {contestant.registration}')
+
+    def winner_statement(self, contestant):
+        print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
     #Any print statements
 
     #Any information needed from user

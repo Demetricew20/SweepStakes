@@ -1,4 +1,4 @@
-
+from os import system, name
 
 
 class UI:
@@ -24,6 +24,19 @@ class UI:
     def winner_statement_contestants(self, contestants):
         # Notify All Contestants ****
         pass
+
+    def manager_options(self):
+        print('Please choose from available management options: Stack Manager or Queue Manager')
+        user_input = input('Press -0- for Stack Manager'
+                           'Press -1- for Queue Manager'
+                           'Press -2- to exit')
+        return user_input
+
+    def clear_console(self):
+        if name == 'nt':
+            _ = system('cls')
+        else:
+            _ = system('clear')
 
 
 

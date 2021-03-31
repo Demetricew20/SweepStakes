@@ -1,11 +1,11 @@
 
 
 class Contestants:
-    #First name, Last name ,email, registration number
-    def __int__(self, first, last, email, registration_num):
-        self.first = first
-        self.last = last
+    def __init__(self, first_name, last_name, email, registration):
+        self.first_name = first_name
+        self.last_name = last_name
         self.email = email
-        self.registration = registration_num
+        self.registration = registration
 
-    #notify winner
+
+

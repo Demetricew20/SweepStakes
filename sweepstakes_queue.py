@@ -10,8 +10,15 @@ class SweepstakesQueueManager:
 
 
 class Queue:
+
     def __init__(self):
-        pass
+        self.queue = []
+
+    def enqueue(self, item):
+        self.queue.append(item)
+
+    def dequeue(self):
+        return self.queue.pop(0)
 
     #create list
 

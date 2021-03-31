@@ -1,2 +1,1 @@
-# SweepStakes
-Project - OOP
+# SweepstakesProject

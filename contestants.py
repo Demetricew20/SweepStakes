@@ -8,4 +8,7 @@ class Contestants:
         self.registration = registration
 
 
+new_contestant = Contestants('John', 'Doe', 'jd@gmail.com', 5555)
+
+
 

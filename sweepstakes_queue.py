@@ -1,12 +1,18 @@
-
+from sweepstakes import SweepStakes
 
 class SweepstakesQueueManager:
     def __init__(self):
         pass
 
     #insert sweepstakes
+    def insert_sweepstakes(self, sweepstakes):
+        sweepstakes = SweepStakes(sweepstakes)
+        ## print statement when entering sweepstake
 
     #get sweepstakes
+    def get_sweepstakes(self, sweepstakes):
+        ##Clarity on what get sweepstakes mean
+        pass
 
 
 class Queue:
@@ -19,9 +25,3 @@ class Queue:
 
     def dequeue(self):
         return self.queue.pop(0)
-
-    #create list
-
-    #enqueue (in line)
-
-    #dequeue (exit line)

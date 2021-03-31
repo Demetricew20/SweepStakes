@@ -1,4 +1,4 @@
-from sweepstakes import SweepStakes
+
 
 class SweepstakesStackManager:
     def __init__(self):
@@ -6,8 +6,8 @@ class SweepstakesStackManager:
 
     #insert sweepstakes
     def insert_sweepstakes(self, sweepstakes):
-        sweepstakes = SweepStakes(sweepstakes)
-        ## print statement when entering sweepstake
+        pass
+        # print statement when entering sweepstake
 
 
     #get sweepstakes

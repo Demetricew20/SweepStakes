@@ -1,13 +1,8 @@
 from os import system, name
 
-
 class UI:
     def __init__(self):
-        self.contestant_list = []
-
-    def contestant_list(self):
-        contestants_list = self.contestant_list
-        return contestants_list
+        pass
 
     def registered_statement(self, contestant):
         print(f'Contestant {contestant.registration} is registered!')
@@ -27,10 +22,24 @@ class UI:
 
     def manager_options(self):
         print('Please choose from available management options: Stack Manager or Queue Manager')
-        user_input = input('Press -0- for Stack Manager'
-                           'Press -1- for Queue Manager'
-                           'Press -2- to exit')
-        return user_input
+        validate_option = (False, None)
+        while validate_option[0] is False:
+            print("\tPress -0- for Stack Manager")
+            print("\tPress -1- for Queue Manager")
+            print("\tPress -2- to terminate program")
+            user_input = input('Press number: ')
+            validate_user_selection = user_interface.validate_manager_options(user_input)
+            return validate_user_selection[1]
+
+    def validate_manager_options(self, user_input):
+        """Validation function that checks if 'user_input' argument is an int 0-3. No errors."""
+        switcher = {
+            '0': (True, '0'),
+            '1': (True, '1'),
+            '2': (True, '2'),
+        }
+
+        return switcher.get(user_input, (True, None))
 
     def clear_console(self):
         if name == 'nt':

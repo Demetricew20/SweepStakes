@@ -1,15 +1,16 @@
 from user_interface import user_interface
-from sweepstakes_stack import SweepstakesStackManager
-from sweepstakes_queue import SweepstakesQueueManager
+import sweepstakes_stack
+import sweepstakes_queue
+
 
 class FirmManager:
     def __init__(self):
-        self.manager_options = ['Stack Manager', 'Queue Manager']
+        pass
 
     #Choose Manager Type
     def choice_manager_type(self):
-        stack_manager = SweepstakesStackManager()
-        queue_manager = SweepstakesQueueManager
+        stack_manager = sweepstakes_stack.SweepstakesStackManager()
+        queue_manager = sweepstakes_queue.SweepstakesQueueManager()
         while True:
             user_input = user_interface.manager_options()
             if user_input == '0':

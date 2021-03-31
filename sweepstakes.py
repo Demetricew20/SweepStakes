@@ -24,7 +24,7 @@ class SweepStakes:
         randint = random.randint(0, len(self.registered_contestants) - 1)
         for i in range(0, len(self.registered_contestants)):
             winner = self.registered_contestants[randint]
-            return winner, user_interface.winner_statement_firm(winner)
+            return winner and user_interface.winner_statement_firm(winner)
 
 
 sweepstakes = SweepStakes('MarchSweepStakes')

@@ -17,8 +17,16 @@ class UI:
         print(f'Name: {contestant.first_name} {contestant.last_name} / Email: {contestant.email} / '
               f'Registration #: {contestant.registration}')
 
-    def winner_statement(self, contestant):
+
+    def winner_statement_firm(self, contestant):
         print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
+
+    def winner_statement_contestants(self, contestants):
+        # Notify All Contestants ****
+        pass
+
+
+
     #Any print statements
 
     #Any information needed from user

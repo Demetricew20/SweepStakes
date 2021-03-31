@@ -1,13 +1,19 @@
-
+from sweepstakes import SweepStakes
 
 class SweepstakesStackManager:
     def __init__(self):
         pass
 
     #insert sweepstakes
+    def insert_sweepstakes(self, sweepstakes):
+        sweepstakes = SweepStakes(sweepstakes)
+        ## print statement when entering sweepstake
+
 
     #get sweepstakes
-
+    def get_sweepstakes(self, sweepstakes):
+        ##Clarity on what get sweepstakes mean
+        pass
 
 class Stack:
 
@@ -19,9 +25,3 @@ class Stack:
 
     def pop(self):
         return self.stack.pop(-1)
-
-    # create list
-
-    #push item
-
-    #pop sweepstake

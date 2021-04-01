@@ -1,18 +1,17 @@
-import queue_manager
-
+from queue_manager import Queue
 
 class SweepstakesQueueManager:
     def __init__(self):
-        pass
+        self.queue = Queue()
 
     #insert sweepstakes
     def insert_sweepstakes(self, sweepstakes):
-        pass
-        ## print statement when entering sweepstake
+        self.queue.enqueue(sweepstakes)
 
     #get sweepstakes
     def get_sweepstakes(self, sweepstakes):
-        ##Clarity on what get sweepstakes mean
-        pass
+        for contest in self.queue.queue:
+            if contest == sweepstakes:
+                return sweepstakes
 
 

@@ -1,18 +1,21 @@
-import stack_manager
+from stack_manager import Stack
+from marketing_firm import MarketingFirm
 
 class SweepstakesStackManager:
     def __init__(self):
-        pass
-
+        self.stack = Stack()
 
     def insert_sweepstakes(self, sweepstakes):
-        pass
+        self.stack.push(sweepstakes)
 
 
 
 
     def get_sweepstakes(self, sweepstakes):
-        pass
+        #Retrieve Sweepstack
+        for contest in self.stack.stack:
+            if contest == sweepstakes:
+                return sweepstakes
 
 
 

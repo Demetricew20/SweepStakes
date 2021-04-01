@@ -2,7 +2,8 @@ from os import system, name
 
 
 def registered_statement(contestant):
-    print(f'Contestant {contestant.registration} is registered!')
+    print(f'Contestant {contestant.first_name} {contestant.last_name} with registration number'
+          f' {contestant.registration} is registered!')
 
 
 def contestant_info(contestant):
@@ -10,7 +11,7 @@ def contestant_info(contestant):
           f'Registration #: {contestant.registration}')
 
 
-def winner_statement_firm(contestant):
+def winner_statement(contestant):
     print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
 
 

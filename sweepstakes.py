@@ -7,7 +7,6 @@ from contestants import *
 class SweepStakes:
     def __init__(self, name):
         self.name = name
-        #Place multiple contestants ****
         self.registered_contestants = defaultdict(list)
 
     def register_new_contestant(self, contestant):
@@ -31,19 +30,13 @@ class SweepStakes:
         randint = random.randint(0, len(self.registered_contestants) - 1)
         for i in range(0, len(self.registered_contestants)):
             winner = self.registered_contestants[randint]
-            if winner:
-                user_interface.winner_statement_firm(winner)
-                # Notify all contestants
-            elif not winner:
-                user_interface.winner_statement_contestants(self.registered_contestants)
+            return winner
 
 
 
 sweep = SweepStakes('name')
 sweep.register_new_contestant(contestant1)
 sweep.register_new_contestant(contestant2)
-sweep.register_new_contestant(contestant2)
-sweep.register_new_contestant(contestant3)
 sweep.register_new_contestant(contestant3)
 sweep.print_contestant_info(contestant1)
 

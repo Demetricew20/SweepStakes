@@ -13,6 +13,7 @@ class Contestants:
         self.contestant_list.append(self)
 
     def notify_winner(self, winner):
+        user_interface.winner_statement(winner)
         user_interface.winner_statement_contestants(winner)
 
 

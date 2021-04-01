@@ -1,4 +1,5 @@
-import  user_interface
+import user_interface
+
 
 class Contestants:
     def __init__(self, first_name, last_name, email, registration):

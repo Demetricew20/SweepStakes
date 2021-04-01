@@ -2,6 +2,7 @@ import user_interface
 from sweepstakes_stack import SweepstakesStackManager
 from sweepstakes_queue import SweepstakesQueueManager
 
+
 class FirmManager:
     def __init__(self):
         self.stack_manager = SweepstakesStackManager()

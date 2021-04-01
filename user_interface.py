@@ -13,13 +13,16 @@ def contestant_info(contestant):
 def winner_statement_firm(contestant):
     print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
 
+
 def winner_statement_contestants(contestant):
     print(f'The sweepstakes have ended and {contestant["First"]} {contestant["Last"]} with number '
           f'{contestant["Registration"]} has won!')
 
+
 def sweepstakes_name_selection():
     user_input = input('Enter name of sweepstake: ')
     return user_input
+
 
 def manager_options():
     print('Please choose from available management options: Stack Manager or Queue Manager')
@@ -32,6 +35,7 @@ def manager_options():
         validate_user_selection = validate_manager_options(user_input)
         return validate_user_selection[1]
 
+
 def validate_manager_options(user_input):
     """Validation function that checks if 'user_input' argument is an int 0-3. No errors."""
     switcher = {
@@ -41,6 +45,7 @@ def validate_manager_options(user_input):
     }
 
     return switcher.get(user_input, (True, None))
+
 
 def clear_console():
     if name == 'nt':

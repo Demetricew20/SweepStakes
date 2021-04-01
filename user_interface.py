@@ -1,5 +1,5 @@
 from os import system, name
-import smtplib
+import smtplib, ssl
 
 def create_contestant():
     f_name_input = input('Enter first name: ')
@@ -33,14 +33,14 @@ def contestant_info(contestant):
 def winner_statement(winner):
     statement = f'Contestant {winner[1].first_name} {winner[1].last_name} with registration number ' \
                 f'{winner[1].registration} congratulations! You are the winner of our sweepstakes!'
-    print(statement)
+    return statement
 
 
 
 def winner_statement_contestants(winner):
     statement = f'The sweepstakes has ended and {winner[1].first_name} {winner[1].last_name} with registration number ' \
                 f'{winner[1].registration} has won!. Please try again in our next contest.'
-    print(statement)
+    return statement
 
 
 def sweepstakes_name_selection():
@@ -80,30 +80,32 @@ def clear_console():
     else:
         _ = system('clear')
 
-def send_message(recipients, message):
-    gmail_user = 'you@gmail.com'
-    gmail_password = 'P@ssword!'
 
-    sent_from = gmail_user
-    to = recipients
-    subject = 'Sweepstakes!'
-    body = message
+def send_message(recipients, statement):
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = "miner.forty9ers@gmail.com"
+    receiver_email = recipients
+    password = input("Type your password and press enter:")
+    message = f'''\
+    Subject: SweepStakes!
+    
+    {statement}
+    
 
-    email_text = f'''
-    From: {sent_from}
-    To: {to}
-    Subject: {subject}
-    Body: {body}
-                '''
+    This message is sent from Python.'''
 
-    try:
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        server.ehlo()
-        server.login(gmail_user, gmail_password)
-        server.sendmail(sent_from, to, email_text)
-        server.close()
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        try:
+            server.ehlo()  # Can be omitted
+            server.starttls(context=context)
+            server.ehlo()  # Can be omitted
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message)
 
-        print('Email sent!')
+        except:
+            print('Error')
 
-    except:
-        print('Error')
+        finally:
+            server.quit()

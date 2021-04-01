@@ -1,6 +1,25 @@
 from os import system, name
 
 
+def create_contestant():
+    f_name_input = input('Enter first name: ')
+    l_name_input = input('Enter last name: ')
+    email_input = input('Enter email address: ')
+    registration_input = input('Enter registration number for contestant: ')
+    contestant_information = (f_name_input, l_name_input, email_input, registration_input)
+    return contestant_information
+
+def menu_selection_contestants():
+    print('Please choose from available management options: Stack Manager or Queue Manager')
+    validate_option = (False, None)
+    while validate_option[0] is False:
+        print("\tPress -0- To Add Contestants")
+        print("\tPress -1- To Register Contestants")
+        print("\tPress -2- to terminate program")
+        user_input = input('Press number: ')
+        validate_user_selection = validate_manager_options(user_input)
+        return validate_user_selection[1]
+
 def registered_statement(contestant):
     print(f'Contestant {contestant.first_name} {contestant.last_name} with registration number'
           f' {contestant.registration} is registered!')

@@ -8,18 +8,10 @@ class Contestants:
         self.email = email
         self.registration = registration
 
-    def add_contestant(self):
-        
-
-
     def notify_winner(self, winner):
         user_interface.winner_statement(winner)
         user_interface.winner_statement_contestants(winner)
 
-
 # contestant1 = Contestants('John', 'Doe', 'jd@gmail.com', 5555)
 # contestant2 = Contestants('Alex', 'Smith', 'as@gmail.com', 4444)
 # contestant3 = Contestants('Ryan', 'Johnson', 'rj@gmail.com', 3333)
-
-
-

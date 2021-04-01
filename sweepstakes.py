@@ -1,5 +1,4 @@
-from contestants import *
-from user_interface import user_interface
+import user_interface
 import random
 
 class SweepStakes:
@@ -27,10 +26,6 @@ class SweepStakes:
             return winner and user_interface.winner_statement_firm(winner)
 
 
-sweepstakes = SweepStakes('MarchSweepStakes')
-sweepstakes.register_new_contestant(new_contestant)
-sweepstakes.print_contestant_info(new_contestant)
-sweepstakes.pick_winner()
 
 
 

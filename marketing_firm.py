@@ -12,18 +12,17 @@ class MarketingFirm:
 
     def create_sweepstakes(self):
         #Create name for sweepstakes
-        name = user_interface.sweepstakes_name_selection()
         user_input = self.manager
         while True:
             if user_input == '0':
-                sweepstakes = SweepStakes(name)
+                sweepstakes = SweepStakes()
                 SweepstakesStackManager().insert_sweepstakes(sweepstakes)
                 return sweepstakes
             elif user_input == '1':
-                sweepstakes = SweepStakes(name)
+                sweepstakes = SweepStakes()
                 SweepstakesQueueManager().insert_sweepstakes(sweepstakes)
                 return sweepstakes
-            else:
+            elif user_input == '2':
                 return False
 
 

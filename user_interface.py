@@ -2,16 +2,23 @@ from os import system, name
 import smtplib, ssl
 from email.message import EmailMessage
 
-def create_contestant():
+def create_contestant_first_name():
     f_name_input = input('Enter first name: ')
+    return f_name_input
+
+def create_contestant_last_name():
     l_name_input = input('Enter last name: ')
-    email_input = input('Enter email address: ')
-    registration_input = input('Enter registration number for contestant: ')
-    contestant_information = (f_name_input, l_name_input, email_input, registration_input)
-    return contestant_information
+    return l_name_input
+
+def create_contestant_email():
+    email = input('Enter email address: ')
+    return email
+
+def create_contestant_registration():
+    register = input('Enter registration number: ')
+    return register
 
 def menu_selection_contestants():
-    print('Please choose from available management options: Stack Manager or Queue Manager')
     validate_option = (False, None)
     while validate_option[0] is False:
         print("\tPress -0- To Add Contestants")
@@ -45,10 +52,6 @@ def winner_statement_contestants(winner):
 
 def sweepstakes_name_selection():
     user_input = input('Enter name of sweepstake: ')
-    return user_input
-
-def marketing_firm_manager_selection():
-    user_input = input('Enter name of manager: ')
     return user_input
 
 def manager_options():
@@ -88,6 +91,7 @@ def send_message(recipients, statement):
     sender_email = "your@gmail.com"
     #To
     receiver_email = recipients
+    #Remove 'input' to make messaging automatic
     password = input("Type your password and press enter:")
     message = EmailMessage()
     message['From'] = sender_email

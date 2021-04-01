@@ -2,9 +2,14 @@ import random
 from contestants import *
 
 class SweepStakes:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = ""
         self.registered_contestants = {}
+
+    def sweepstake_name(self):
+        name = user_interface.sweepstakes_name_selection()
+        self.name = name
+        return self.name
 
     def register_new_contestant(self, contestant):
         self.registered_contestants[contestant.registration] = contestant
@@ -21,7 +26,7 @@ class SweepStakes:
         items = self.registered_contestants.items()
         values = self.registered_contestants.values()
         winner = random.choice(list(items))
-        contestant1.notify_winner(winner, values)
+        contestant.notify_winner(winner, values)
         return winner
 
 

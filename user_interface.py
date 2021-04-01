@@ -24,6 +24,9 @@ def sweepstakes_name_selection():
     user_input = input('Enter name of sweepstake: ')
     return user_input
 
+def marketing_firm_manager_selection():
+    user_input = input('Enter name of manager: ')
+    return user_input
 
 def manager_options():
     print('Please choose from available management options: Stack Manager or Queue Manager')

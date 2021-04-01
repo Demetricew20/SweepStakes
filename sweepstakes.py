@@ -34,11 +34,11 @@ class SweepStakes:
 
 
 
-sweep = SweepStakes('name')
-sweep.register_new_contestant(contestant1)
-sweep.register_new_contestant(contestant2)
-sweep.register_new_contestant(contestant3)
-sweep.print_contestant_info(contestant1)
+# sweep = SweepStakes('name')
+# sweep.register_new_contestant(contestant1)
+# sweep.register_new_contestant(contestant2)
+# sweep.register_new_contestant(contestant3)
+# sweep.print_contestant_info(contestant1)
 
 
 

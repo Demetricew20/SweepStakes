@@ -28,6 +28,3 @@ class MarketingFirm:
         return sweepstake
 
 
-marketing_firm = MarketingFirm('Stack')
-marketing_firm.create_sweepstakes()
-

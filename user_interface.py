@@ -84,7 +84,9 @@ def clear_console():
 def send_message(recipients, statement):
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
-    sender_email = "miner.forty9ers@gmail.com"
+    #From
+    sender_email = "your@gmail.com"
+    #To
     receiver_email = recipients
     password = input("Type your password and press enter:")
     message = EmailMessage()

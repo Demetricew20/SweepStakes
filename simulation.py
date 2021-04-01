@@ -1,5 +1,8 @@
 import user_interface
 from marketing_firm import MarketingFirm
+from marketing_firm_creator import FirmManager
+from sweepstakes_stack import SweepstakesStackManager
+from sweepstakes_queue import SweepstakesQueueManager
 
 
 class Simulation:
@@ -7,13 +10,12 @@ class Simulation:
         pass
 
     def run_simulation(self):
-        user_input = user_interface.marketing_firm_manager_selection()
-        if user_input == "0":
-            marketing_firm = MarketingFirm(StackManager())
-
+        marketing_firm = MarketingFirm()
         marketing_firm.create_sweepstakes()
+
+
         # Create menu selection to add new contestants and register contestants
-        user_interface.menu_selection_contestants()
+        # user_interface.menu_selection_contestants()
 
 
 

@@ -26,12 +26,12 @@ class Contestants:
 
 
 
-contestant1 = Contestants('John', 'Doe', 'miner.forty9ers@gmail.com', 1)
-contestant2 = Contestants('Alex', 'Smith', 'miner.forty9ers@gmail.com', 2)
-contestant3 = Contestants('Ryan', 'Johnson', 'miner.forty9ers@gmail.com', 3)
-contestant1.contestants_lst()
-contestant2.contestants_lst()
-contestant3.contestants_lst()
+# contestant1 = Contestants('John', 'Doe', 'miner.forty9ers@gmail.com', 1)
+# contestant2 = Contestants('Alex', 'Smith', 'miner.forty9ers@gmail.com', 2)
+# contestant3 = Contestants('Ryan', 'Johnson', 'miner.forty9ers@gmail.com', 3)
+# contestant1.contestants_lst()
+# contestant2.contestants_lst()
+# contestant3.contestants_lst()
 
 
 

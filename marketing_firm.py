@@ -2,21 +2,24 @@ from marketing_firm_creator import FirmManager
 from sweepstakes_queue import SweepstakesQueueManager
 from sweepstakes_stack import SweepstakesStackManager
 from sweepstakes import SweepStakes
+import user_interface
 
 
 class MarketingFirm:
     def __init__(self, manager):
         self.manager = manager
         self.manager_options = FirmManager()
-        self.sweepstakes = SweepStakes(self.manager)
+        self.name = ""
+        self.sweepstakes = SweepStakes(self.name)
         self.stack = SweepstakesStackManager()
         self.queue = SweepstakesQueueManager()
 
-    #Create SweepStakes
-    #Valid manager options to select... Import from Firm Manager??
     def create_sweepstakes(self):
-        sweepstake = self.sweepstakes
+        #Create name for sweepstakes
+        self.name = user_interface.sweepstakes_name_selection()
+        #Select manager
         self.manager_options = self.manager_options.choice_manager_type()
+        sweepstake = self.sweepstakes
         # insert into stack manager when sweepstake is created
         if self.manager_options == '0':
             self.stack.insert_sweepstakes(sweepstake)

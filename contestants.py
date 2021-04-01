@@ -1,4 +1,4 @@
-
+import  user_interface
 
 class Contestants:
     def __init__(self, first_name, last_name, email, registration):
@@ -11,10 +11,13 @@ class Contestants:
     def add_to_contestant_list(self):
         self.contestant_list.append(self)
 
+    def notify_winner(self, winner):
+        user_interface.winner_statement_contestants(winner)
 
 
-new_contestant = Contestants('John', 'Doe', 'jd@gmail.com', 5555)
-new_contestant.add_to_contestant_list()
+contestant1 = Contestants('John', 'Doe', 'jd@gmail.com', 5555)
+contestant2 = Contestants('Alex', 'Smith', 'as@gmail.com', 4444)
+contestant3 = Contestants('Ryan', 'Johnson', 'rj@gmail.com', 3333)
 
 
 

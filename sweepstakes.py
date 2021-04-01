@@ -5,7 +5,7 @@ class SweepStakes:
     def __init__(self, name):
         self.name = name
         #Place multiple contestants ****
-        self.registered_contestants = [{'First': "", 'Last': "", 'Email': "", 'Registration': ""}, ]
+        self.registered_contestants = [{'First': "", 'Last': "", 'Email': "", 'Registration': ""} ]
 
     def register_new_contestant(self, contestant):
         #Iterate through all contestants to register them, check for duplicates ****
@@ -26,6 +26,7 @@ class SweepStakes:
             return winner and user_interface.winner_statement_firm(winner)
 
 
+sweep = SweepStakes('name')
 
 
 

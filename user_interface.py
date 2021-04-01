@@ -13,9 +13,13 @@ def contestant_info(contestant):
 def winner_statement_firm(contestant):
     print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
 
-def winner_statement_contestants(contestants):
-    # Notify All Contestants ****
-    pass
+def winner_statement_contestants(contestant):
+    print(f'The sweepstakes have ended and {contestant["First"]} {contestant["Last"]} with number '
+          f'{contestant["Registration"]} has won!')
+
+def sweepstakes_name_selection():
+    user_input = input('Enter name of sweepstake: ')
+    return user_input
 
 def manager_options():
     print('Please choose from available management options: Stack Manager or Queue Manager')

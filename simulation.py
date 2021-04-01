@@ -9,8 +9,10 @@ class Simulation:
     def run_simulation(self):
         marketing_firm = MarketingFirm(user_interface.marketing_firm_manager_selection())
         marketing_firm.create_sweepstakes()
+        # Create menu selection to add new contestants and register contestants
         user_interface.menu_selection_contestants()
 
-        # Create menu selection to add new contestants and register contestants
+
+
 
 

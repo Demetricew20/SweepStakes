@@ -30,13 +30,14 @@ def contestant_info(contestant):
           f'Registration #: {contestant.registration}')
 
 
-def winner_statement(contestant):
-    print(f'Contestant {contestant["First"]} {contestant["Last"]} with number {contestant["Registration"]} has won!')
+def winner_statement(dict, index):
+    print(f'Contestant {dict["Name"][index]} with number '
+          f'{dict["Registration"][index]} has won!')
 
 
-def winner_statement_contestants(contestant):
-    print(f'The sweepstakes have ended and {contestant["First"]} {contestant["Last"]} with number '
-          f'{contestant["Registration"]} has won!')
+def winner_statement_contestants(dict, index):
+    print(f'The sweepstakes has ended and {dict["Name"][index]} with number '
+          f'{dict["Registration"][index]} has won!')
 
 
 def sweepstakes_name_selection():

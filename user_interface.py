@@ -1,5 +1,6 @@
 from os import system, name
 import smtplib, ssl
+from email.message import EmailMessage
 
 def create_contestant():
     f_name_input = input('Enter first name: ')
@@ -31,8 +32,7 @@ def contestant_info(contestant):
 
 
 def winner_statement(winner):
-    statement = f'Contestant {winner[1].first_name} {winner[1].last_name} with registration number ' \
-                f'{winner[1].registration} congratulations! You are the winner of our sweepstakes!'
+    statement = f'{winner[1].first_name} {winner[1].last_name} congratulations! You are the winner of our sweepstakes!'
     return statement
 
 
@@ -87,14 +87,11 @@ def send_message(recipients, statement):
     sender_email = "miner.forty9ers@gmail.com"
     receiver_email = recipients
     password = input("Type your password and press enter:")
-    message = f'''\
-    Subject: SweepStakes!
-    
-    {statement}
-    
-
-    This message is sent from Python.'''
-
+    message = EmailMessage()
+    message['From'] = sender_email
+    message['To'] = receiver_email
+    message['Subject'] = 'Sweepstakes!'
+    message.set_payload(statement)
     context = ssl.create_default_context()
     with smtplib.SMTP(smtp_server, port) as server:
         try:
@@ -102,7 +99,7 @@ def send_message(recipients, statement):
             server.starttls(context=context)
             server.ehlo()  # Can be omitted
             server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, message)
+            server.send_message(message)
 
         except:
             print('Error')

@@ -1,5 +1,5 @@
 from os import system, name
-
+import smtplib
 
 def create_contestant():
     f_name_input = input('Enter first name: ')
@@ -30,14 +30,17 @@ def contestant_info(contestant):
           f'Registration #: {contestant.registration}')
 
 
-def winner_statement(dict, index):
-    print(f'Contestant {dict["Name"][index]} with number '
-          f'{dict["Registration"][index]} has won!')
+def winner_statement(winner):
+    statement = f'Contestant {winner[1].first_name} {winner[1].last_name} with registration number ' \
+                f'{winner[1].registration} congratulations! You are the winner of our sweepstakes!'
+    print(statement)
 
 
-def winner_statement_contestants(dict, index):
-    print(f'The sweepstakes has ended and {dict["Name"][index]} with number '
-          f'{dict["Registration"][index]} has won!')
+
+def winner_statement_contestants(winner):
+    statement = f'The sweepstakes has ended and {winner[1].first_name} {winner[1].last_name} with registration number ' \
+                f'{winner[1].registration} has won!. Please try again in our next contest.'
+    print(statement)
 
 
 def sweepstakes_name_selection():
@@ -77,3 +80,30 @@ def clear_console():
     else:
         _ = system('clear')
 
+def send_message(recipients, message):
+    gmail_user = 'you@gmail.com'
+    gmail_password = 'P@ssword!'
+
+    sent_from = gmail_user
+    to = recipients
+    subject = 'Sweepstakes!'
+    body = message
+
+    email_text = f'''
+    From: {sent_from}
+    To: {to}
+    Subject: {subject}
+    Body: {body}
+                '''
+
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail(sent_from, to, email_text)
+        server.close()
+
+        print('Email sent!')
+
+    except:
+        print('Error')

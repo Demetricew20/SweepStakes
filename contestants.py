@@ -12,14 +12,18 @@ class Contestants:
     def contestants_lst(self):
         self.contest_list.append(self)
 
-    def notify_winner(self, winner, index):
-        user_interface.winner_statement_contestants(winner, index)
-        user_interface.winner_statement(winner, index)
+    def notify_winner(self, winner, values):
+        for value in values:
+            if value != winner[1]:
+                user_interface.winner_statement_contestants(winner)
+            else:
+                user_interface.winner_statement(winner)
 
 
-contestant1 = Contestants('John', 'Doe', 'jd@gmail.com', 5555)
-contestant2 = Contestants('Alex', 'Smith', 'as@gmail.com', 4444)
-contestant3 = Contestants('Ryan', 'Johnson', 'rj@gmail.com', 3333)
+
+contestant1 = Contestants('John', 'Doe', 'jd@gmail.com', 1)
+contestant2 = Contestants('Alex', 'Smith', 'as@gmail.com', 2)
+contestant3 = Contestants('Ryan', 'Johnson', 'rj@gmail.com', 3)
 contestant1.contestants_lst()
 contestant2.contestants_lst()
 contestant3.contestants_lst()

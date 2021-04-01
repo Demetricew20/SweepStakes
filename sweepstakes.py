@@ -1,37 +1,30 @@
-import user_interface
 import random
-from collections import defaultdict
 from contestants import *
 
 class SweepStakes:
     def __init__(self, name):
         self.name = name
-        self.registered_contestants = defaultdict(list)
+        self.registered_contestants = {}
 
     def register_new_contestant(self, contestant):
-        lst = [('Name', f'{contestant.first_name} {contestant.last_name}'), ('Email', contestant.email),
-               ('Registration', contestant.registration)]
+        self.registered_contestants[contestant.registration] = contestant
         #Check for duplicates using registration
-        if contestant.registration in self.registered_contestants['Registration']:
-            return None, print(f'{contestant.first_name} {contestant.last_name} has already been registered.')
-        else:
-            #Append values to dictionary for each contestant
-            for key, val in lst:
-                self.registered_contestants[key].append(val)
-                #Validation Statement
-            user_interface.registered_statement(contestant)
+        if contestant.registration in self.registered_contestants:
+            return None, print('Contestant has already been registered')
+        user_interface.registered_statement(contestant)
 
     def print_contestant_info(self, contestant):
         user_interface.contestant_info(contestant)
 
     def pick_winner(self):
-        #Notify winner
-        print(len(self.registered_contestants))
-        randint = random.randint(0, len(self.registered_contestants) - 1)
-        for i in range(0, len(self.registered_contestants)):
-            winner = self.registered_contestants['Name'][randint]
-            contestant1.notify_winner(self.registered_contestants, randint)
-            return winner
+        #Choose Random Winner
+        items = self.registered_contestants.items()
+        values = self.registered_contestants.values()
+        winner = random.choice(list(items))
+        contestant1.notify_winner(winner, values)
+        return winner
+
+
 
 
 

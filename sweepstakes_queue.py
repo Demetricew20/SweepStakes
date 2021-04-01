@@ -1,5 +1,6 @@
 from queue_manager import Queue
 
+
 class SweepstakesQueueManager:
     def __init__(self):
         self.queue = Queue()

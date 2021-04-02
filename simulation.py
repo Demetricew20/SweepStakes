@@ -1,10 +1,6 @@
 import user_interface
 from marketing_firm import MarketingFirm
 import contestants
-import sweepstakes
-from marketing_firm_creator import FirmManager
-from sweepstakes_stack import SweepstakesStackManager
-from sweepstakes_queue import SweepstakesQueueManager
 
 
 class Simulation:
@@ -14,7 +10,7 @@ class Simulation:
     def run_simulation(self):
         marketing_firm = MarketingFirm()
         marketing_firm.create_sweepstakes()
-        sweepstakes.SweepStakes().sweepstake_name()
+        marketing_firm.sweepstakes.sweepstake_name()
         new_contestants = []
         running = True
         while running is True:
@@ -27,14 +23,14 @@ class Simulation:
                 contestant.contestants_lst()
                 new_contestants.append(contestant)
             elif user_input == '1':
-                ##register contestant
                 for contestant in new_contestants:
-                    sweepstakes.SweepStakes().register_new_contestant(contestant)
+                    marketing_firm.sweepstakes.register_new_contestant(contestant)
             elif user_input == '2':
+                marketing_firm.sweepstakes.pick_winner(new_contestants[0])
+            else:
+                user_interface.clear_console()
                 running = False
 
-
-        # Create menu selection to add new contestants and register contestants
 
 
 

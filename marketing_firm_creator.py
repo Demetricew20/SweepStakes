@@ -1,7 +1,6 @@
 import user_interface
 
 
-
 class FirmManager:
     def __init__(self):
         pass

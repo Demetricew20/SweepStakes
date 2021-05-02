@@ -10,3 +10,7 @@ Build backend application that provides the functionality to manage sweepstakes 
 - Python
 - API (for emailing contestants)
 
+## Captures
+![Screenshot 2021-05-01 184620](https://user-images.githubusercontent.com/76887873/116800584-fec09f00-aaae-11eb-8d58-da1d25be4153.jpg)
+
+

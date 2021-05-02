@@ -98,7 +98,7 @@ def send_message(recipients, statement):
     #To
     receiver_email = recipients
     # Ask for user email password. Remove input and place email password for automatic approval of emails
-    password = input("Type your password and press enter:")
+    # password = input("Type your password and press enter:")
     message = EmailMessage()
     message['From'] = sender_email
     message['To'] = receiver_email

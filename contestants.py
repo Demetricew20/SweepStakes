@@ -19,11 +19,11 @@ class Contestants:
             email = value.email
             if value != winner[1]:
                 losing_statement = user_interface.winner_statement_contestants(winner)
-                user_interface.send_message(email, losing_statement)
+                # user_interface.send_message(email, losing_statement)
                 print(losing_statement)
             else:
                 winning_statement = user_interface.winner_statement(winner)
-                user_interface.send_message(email, winning_statement)
+                # user_interface.send_message(email, winning_statement)
                 print(winning_statement)
 
 
